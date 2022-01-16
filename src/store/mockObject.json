@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [14.4633, 50.07827]
+      },
+      "properties": {
+        "address": {
+          "address_formatted": "Dělnická 213/10, 17000 Praha-Holešovice, Česko",
+          "street_address": "Dělnická 213/10",
+          "postal_code": "17000",
+          "address_locality": "Praha",
+          "address_region": "Holešovice",
+          "address_country": "Česko"
+        },
+        "description": "Mozartova busta v zahradě legendární usedlosti stojí na vyvýšeném, trochu zvláštním, místě, jakoby stranou pomyslné hlavní osy podlouhlého pozemku. Mistr, byť pouze v kamenné podobě, tak má dokonalý přehled o dění v zahradě, ale současně překrásný výhled na stráně vrchu Mrázovka.",
+        "district": "praha-5",
+        "id": "betramka",
+        "image": {
+          "url": "http://www.praha.eu/public/5c/7c/31/96820_4_bertramka_08.jpg"
+        },
+        "name": "Betramka",
+        "properties": [
+          {
+            "id": "doba",
+            "description": "Otevírací doba",
+            "value": "Celoročně duben až říjen 9-18 hod., listopad až březen 9:30-16 hod."
+          }
+        ],
+        "updated_at": "2019-05-18T07:38:37.000Z",
+        "url": "http://www.praha.eu/jnp/cz/co_delat_v_praze/parky/bertramka/bertramka_text.html"
+      },
+      "type": "Feature"
+    }
+  ]
+}

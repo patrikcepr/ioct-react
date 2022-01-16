@@ -1,0 +1,19 @@
+@import '../../../styles/_colors.sass'
+@import '../../../styles/shared.sass'
+
+.input 
+  display: flex 
+  align-items: center 
+
+.input label 
+  font-weight: bold 
+  margin-right: 1em 
+
+.input input 
+  max-width: 60%
+  @media(max-width: $layout-breakpoint-xxsmall)
+    max-width: 35%
+  border-radius: 5px 
+  border: 1px solid #ccc 
+  font: inherit 
+  padding-left: .5em 
