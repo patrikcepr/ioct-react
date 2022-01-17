@@ -5,6 +5,12 @@ const AppContext = createContext({
   data: [],
   lang: '',
   onChooseLang: () => {},
+  detail: {},
+  isLoading: Boolean,
+  error: null,
+  showModalState: Boolean,
+  hideModal: () => {},
+  showModal: () => {},
 });
 
 export const AppContextProvider = (props) => {
@@ -12,31 +18,35 @@ export const AppContextProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [detail, setDetail] = useState({});
 
-  const chooseCzechHandler = () => {
-    setLang('cs');
-  };
-
-  const chooseEnglishHandler = () => {
-    setLang('en');
+  const chooseLangHandler = (lang) => {
+    setLang(lang);
   };
 
   const url =
     'https://private-anon-510a79a142-golemioapi.apiary-mock.com/v2/medicalinstitutions/?latlng=&range=&districts=&group=&limit=&offset=&updatedSince=';
   //'https://private-anon-510a79a142-golemioapi.apiary-mock.com/v2/gardens/?latlng=&range=&districts=&limit=&offset=&updatedSince=';
 
+  const productionUrl =
+    'https://api.golemio.cz/v2/medicalinstitutions/?latlng=&range=&districts=&group=&limit=20&offset=&updatedSince=';
+
   const token =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhY2thdGhvbkBnb2xlbWlvLmN6IiwiaWQiOjIsIm5hbWUiOiJIYWNrYXRob24iLCJzdXJuYW1lIjoiR29sZW1pbyIsImlhdCI6MTU4NDU0NDYzMSwiZXhwIjoxMTU4NDU0NDYzMSwiaXNzIjoiZ29sZW1pbyIsImp0aSI6IjVlNjU2NDQxLTA4OGUtNDYyYS1iMjUyLTFiNzI1OGU0ZGJkYSJ9.ypDAJirgEs8VBSauraFEoLTTtC6y_F8V1fheAHgzMos';
+
+  const myToken =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhdHJpay5jZXByQGdtYWlsLmNvbSIsImlkIjoxMDQ2LCJuYW1lIjpudWxsLCJzdXJuYW1lIjpudWxsLCJpYXQiOjE2NDIzNTE2NzcsImV4cCI6MTE2NDIzNTE2NzcsImlzcyI6ImdvbGVtaW8iLCJqdGkiOiJhMGQ3NWM2MS1mOTkxLTRkZWEtOGNlZi1hZjg0NGQyZjBhOWYifQ.tr4ZhXhIGVqGz9dzWoyGI-iRFCuvfON16nbhlwcyfiw';
 
   const getDataHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await axios.get(url, {
+      const response = await axios.get(productionUrl, {
         headers: {
           'Content-Type': 'application/json',
-          'x-access-token': token,
+          'x-access-token': myToken,
         },
       });
       const data = response.data.features;
@@ -55,23 +65,14 @@ export const AppContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   var request = new XMLHttpRequest();
+  const hideModalHandler = () => {
+    setShowModal(false);
+  };
 
-  //   request.open('GET', url);
-
-  //   request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-  //   request.setRequestHeader('x-access-token', token);
-
-  //   request.onreadystatechange = () => {
-  //     if (request.readyState === 4) {
-  //       console.log(request.responseText);
-  //     }
-  //   };
-
-  //   request.send();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const showModalHandler = (index) => {
+    setDetail(data[index]);
+    setShowModal(true);
+  };
 
   return (
     <AppContext.Provider
@@ -80,8 +81,11 @@ export const AppContextProvider = (props) => {
         isLoading: isLoading,
         error: error,
         lang: lang,
-        onChooseLangCzech: chooseCzechHandler,
-        onChooseLangEnglish: chooseEnglishHandler,
+        onChooseLang: chooseLangHandler,
+        showModalState: showModal,
+        detail: detail,
+        hideModal: hideModalHandler,
+        showModal: showModalHandler,
       }}
     >
       {props.children}

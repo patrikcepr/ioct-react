@@ -10,10 +10,12 @@ const Places = () => {
 
   return (
     <div className={styles.places}>
-      {ctx.data.map((place) => {
+      {ctx.data.map((place, index) => {
         return (
           <Place
             key={place.properties.id}
+            id={place.properties.id}
+            index={index}
             name={place.properties.name}
             addr={place.properties.address.street_address}
           />

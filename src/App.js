@@ -4,10 +4,12 @@ import Nav from './components/Layout/Nav';
 import Places from './components/Places/Places';
 import Footer from './components/Layout/Footer';
 import Loader from './components/UI/Loader/Loader';
+import PlaceDetail from './components/Places/PlaceDetail';
 
 import AppContext from './store/appContext';
 import './styles/shared.sass';
 import './App.sass';
+import Modal from './components/UI/Modal/Modal';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -30,7 +32,14 @@ function App() {
     <div className='App'>
       <Header />
       <Nav />
-      <main>{content}</main>
+      <main>
+        {content}
+        {ctx.showModalState && (
+          <Modal>
+            <PlaceDetail />
+          </Modal>
+        )}
+      </main>
       <Footer />
     </div>
   );

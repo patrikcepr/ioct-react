@@ -2,9 +2,19 @@
 @import '../../styles/shared.sass'
 
 .apiform
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  gap: .5em
   padding: .5em
-  margin: 2em 1em
+  margin: 1em 1em 0
   border-radius: .5em
   background-color: desaturate($primary-color, 30%)
-  @media(max-width: $layout-breakpoint-xxsmall)
+  @media(min-width: $layout-breakpoint-xxsmall)
+    flex-direction: row
+  @media(min-width: $layout-breakpoint-extra-small)
     margin: 1em
+
+  .button
+    border: none
+    border-radius: .5em

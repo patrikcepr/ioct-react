@@ -4,23 +4,9 @@
 .nav
   width: 100%
   display: flex
+  justify-content: space-between
+  flex-direction: column
   background-color: lighten($grey, 55%)
-  @media(max-width: $layout-breakpoint-xxsmall)
-    flex-direction: column
-  ul
-    font-weight: bold
-    width: 120px
-    margin: 2em 1em
-    padding: .5em 0
-    list-style: none
-    background-color: desaturate($primary-color, 30%)
-    border-radius: .5em
-    @media(max-width: $layout-breakpoint-xxsmall)
-      margin: 1em
-    li
-      display: inline
-    li:nth-child(odd)
-      padding: 0 .5em
-    li:nth-child(odd):hover
-      color: lighten($text-color, 40%)
-      cursor: pointer
+  margin-bottom: 1em
+  @media(min-width: $layout-breakpoint-extra-small)
+    flex-direction: row

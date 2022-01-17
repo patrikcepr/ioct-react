@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <h4>Datasource: Operator ICT a.s., 2022</h4>
+      <h4>Datasource: https://operator-ict.gitlab.io</h4>
     </footer>
   );
 };

@@ -1,10 +1,11 @@
 @import '../../styles/_colors.sass'
+@import '../../styles/shared.sass'
 
 
 .header
   padding: 1em
   background-color: $primary-color
 
-  // h1
-    // width: 50%
-    // padding-top: .5em
+  h1
+    @media(max-width: $layout-breakpoint-xxsmall)
+      font-size: 1.7em
