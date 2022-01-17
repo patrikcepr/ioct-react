@@ -6,13 +6,31 @@
   padding: 1em
   width: calc(100vw - 4em)
   border-radius: 1em
-  color: white
-  background-color: $grey
+  color: $text-color
+  background-color: $secondary-color
+  text-align: center
+  box-shadow: 0 0 3px $grey
   @media (min-width: $layout-breakpoint-extra-small)
     margin: 0
     width: calc(50% - 4em)
   @media (min-width: $layout-breakpoint-small)
     width: calc(33% - 3em)
+  &:hover
+    box-shadow: 0 5px 10px
   
   h3
     margin-top: .5em
+
+.button
+  background-color: $secondary-color-light
+  border: none
+  border-bottom: 1px solid $secondary-color-dark
+  border-left: 1px solid $secondary-color-dark
+  font: inherit
+  cursor: pointer
+  color: $text-color
+  padding: 0.25rem 2rem
+  &:hover,
+  &:active 
+    background-color: $secondary-color-dark
+    border-top-color: $secondary-color-light

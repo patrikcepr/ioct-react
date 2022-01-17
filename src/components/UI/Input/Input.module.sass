@@ -6,13 +6,26 @@
   justify-content: space-between
   align-items: center 
 
-.input label 
-  font-weight: bold 
-  margin-right: .8em 
+  label 
+    font-weight: bold
+    padding: .5em .5em
+    min-width: 60px
+    @media(min-width: $layout-breakpoint-xxsmall)
+      padding: .5em 1em .5em .5em
 
-.input input 
-  max-width: 80%
-  border-radius: 5px 
-  border: 1px solid #ccc 
-  font: inherit 
-  padding-left: .5em 
+  input 
+    max-width: 100%
+    width: 75%
+    height: 37px
+    padding-left: .5em
+    background-color: $primary-color-light
+    border: none
+    border-bottom: 1px solid $grey
+    @media(min-width: $layout-breakpoint-small)
+      width: 25em
+    @media(min-width: $layout-breakpoint-mid)
+      width: 40em
+    &:focus
+      outline: 2px dotted rgba(255, 255, 255, .8)
+      // border-right: 1px solid $grey
+      border-bottom: 1px solid $grey

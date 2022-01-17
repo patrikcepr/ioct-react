@@ -25,7 +25,23 @@ function App() {
   }
 
   if (ctx.error) {
-    content = <span>{ctx.error}</span>;
+    if (ctx.error === 'Request failed with status code 401') {
+      content = (
+        <div className='error'>
+          <span>
+            {ctx.lang === 'en'
+              ? '401 - Unauthorized Access'
+              : '401 - Neautorizovaný přístup'}
+          </span>
+        </div>
+      );
+    } else {
+      content = (
+        <div className='error'>
+          <span>{ctx.error}</span>
+        </div>
+      );
+    }
   }
 
   return (

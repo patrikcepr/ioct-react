@@ -2,21 +2,48 @@
 @import '../../styles/shared.sass'
 
 .place-detail
+  .cancel
+    color: rgba(0,0,0,0.5)
+    font-size: 45px
+    font-weight: lighter
+    position: absolute
+    padding: 0
+    margin: 0
+    cursor: pointer
+    top: -5px
+    right: 10px
+    transform: rotate(45deg)
+
   h4, h2, p
     margin: 0 0 1em
 
   a
-    color: darken($primary-color, 30%)
+    color: $primary-color-dark
 
   .link
     margin-bottom: .4em
 
-.opening-hours
+.opening-days-hours
   margin-top: 1.5em
   margin-bottom: 1.5em
+  width: 230px
+  h4
+    margin: 1em 0 .75em
 
 .day
   display: flex
   flex-direction: row
+  justify-content: space-between
   gap: .8em
   margin-bottom: .1em
+  .day-name
+    font-weight: bold
+    width: 120px
+  .day-opens
+    font-style: oblique
+    &:after
+      content: ' - '
+      position: absolute
+      left: 196px
+  .day-closes
+    font-style: oblique

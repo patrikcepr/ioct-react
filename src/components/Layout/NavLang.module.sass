@@ -4,17 +4,19 @@
 .navlang
   ul
     font-weight: bold
+    list-style: none
     display: flex
     justify-content: space-between
-    aligh-items: center
+    align-items: center
     gap: .1em
     margin: 1em
     padding: .5em 1em
-    list-style: none
-    background-color: desaturate($primary-color, 30%)
-    border-radius: .5em
+    background-color: $primary-color-light
     width: 80px
-    min-height: 25px
+    border-top: 1px solid $grey
+    border-left: 1px solid $grey
+    @media(min-width: $layout-breakpoint-small)
+      height: 24px
     li:nth-child(odd):hover
       color: lighten($text-color, 40%)
       cursor: pointer

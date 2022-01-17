@@ -11,7 +11,7 @@ const NavLang = () => {
     <div className={styles.navlang}>
       <ul>
         <li onClick={ctx.onChooseLang.bind(null, 'cs')}>CZ</li>
-        <li> / </li>
+        <li>/</li>
         <li onClick={ctx.onChooseLang.bind(null, 'en')}>ENG</li>
       </ul>
     </div>

@@ -12,7 +12,12 @@ const Place = (props) => {
     <div className={styles.place}>
       <h3>{props.name}</h3>
       <p>{props.addr}</p>
-      <Button onClick={ctx.showModal.bind(null, props.index)}>více...</Button>
+      <Button
+        style={styles.button}
+        onClick={ctx.showModal.bind(null, props.index)}
+      >
+        {ctx.lang === 'en' ? 'more info...' : 'více...'}
+      </Button>
     </div>
   );
 };

@@ -6,15 +6,22 @@
   flex-direction: column
   justify-content: space-between
   gap: .5em
-  padding: .5em
-  margin: 1em 1em 0
-  border-radius: .5em
-  background-color: desaturate($primary-color, 30%)
-  @media(min-width: $layout-breakpoint-xxsmall)
-    flex-direction: row
+  margin: 1em 1em 1em
   @media(min-width: $layout-breakpoint-extra-small)
+    flex-direction: row
     margin: 1em
 
   .button
+    background-color: $primary-color-light
     border: none
-    border-radius: .5em
+    border-top: 1px solid $grey
+    border-right: 1px solid $grey
+    font: inherit
+    cursor: pointer
+    color: $text-color
+    padding: 0.25rem 2rem
+    min-height: 37px
+    &:hover,
+    &:active 
+      background-color: $primary-color-dark
+      border-color: $primary-color-light

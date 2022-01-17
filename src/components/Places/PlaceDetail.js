@@ -17,15 +17,18 @@ const PlaceDetail = () => {
   const schedule = openingHours.map((day) => {
     return (
       <div className={styles.day} key={day.day_of_week}>
-        <div>{day.day_of_week}</div>
-        <div>{day.opens}</div>
-        <div>{day.closes}</div>
+        <div className={styles['day-name']}>{day.day_of_week}</div>
+        <div className={styles['day-opens']}>{day.opens}</div>
+        <div className={styles['day-closes']}>{day.closes}</div>
       </div>
     );
   });
 
   return (
     <div className={styles['place-detail']}>
+      <h2 className={styles.cancel} onClick={ctx.hideModal}>
+        +
+      </h2>
       <h4>{type}</h4>
       <h2>{name}</h2>
       <p>{address}</p>
@@ -40,7 +43,7 @@ const PlaceDetail = () => {
       <div className={styles.link}>
         <a href={`tel:+420 ${tel}`}>+420 {tel}</a>
       </div>
-      <div className={styles['opening-hours']}>
+      <div className={styles['opening-days-hours']}>
         <h4>{ctx.lang === 'en' ? 'Opening hours' : 'Otevírací doba'}</h4>
         {schedule}
       </div>
