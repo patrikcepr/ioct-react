@@ -22,11 +22,24 @@
 
   .link
     margin-bottom: .4rem
+    font-size: .8rem
+    @media(min-width: $layout-breakpoint-xxxsmall)
+      font-size: 1rem
+    @media(min-width: $layout-breakpoint-xxsmall)
+      font-size: 1.1rem
 
 .opening-days-hours
+  font-size: .8rem
+  width: 200px
   margin-top: 1.5rem
   margin-bottom: 1.5rem
-  width: 230px
+  @media(min-width: $layout-breakpoint-xxxsmall)
+    font-size: 1rem
+    width: 230px
+  @media(min-width: $layout-breakpoint-xxsmall)
+    font-size: 1.2rem
+    width: 270px
+
   h4
     margin: 1rem 0 .75rem
 
@@ -34,16 +47,12 @@
   display: flex
   flex-direction: row
   justify-content: space-between
-  gap: .8rem
+  gap: .5rem
   margin-bottom: .1rem
   .day-name
     font-weight: bold
-    width: 120px
+    flex-grow: 4
   .day-opens
     font-style: oblique
-    &:after
-      content: ' - '
-      position: absolute
-      left: 196px
   .day-closes
     font-style: oblique

@@ -6,14 +6,15 @@
   flex-direction: column
   align-items: center
   // justify-content: space-between
-  margin: 0 1rem
+  // margin: 0 1rem
   padding: 1rem
-  width: calc(100vw - 4rem)
-  border-radius: 0.25rem
+  // width: calc(100vw - 4rem)
+  border-radius: $border-radius
   color: $text-color
-  background-color: $secondary-color
+  background-color: $secondary-color-light
   text-align: center
   box-shadow: 0 0 3px $grey
+  transition: $transition
   @media (min-width: $layout-breakpoint-extra-small)
     margin: 0
     justify-content: center
@@ -43,7 +44,8 @@
     cursor: pointer
     color: $text-color
     padding: 0.25rem 2rem
+    transition: $transition
     &:hover,
     &:active 
-      background-color: $secondary-color-dark
+      background-color: $secondary-color
       border-top-color: $secondary-color-light

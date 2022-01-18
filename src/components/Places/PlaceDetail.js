@@ -19,6 +19,7 @@ const PlaceDetail = () => {
       <div className={styles.day} key={day.day_of_week}>
         <div className={styles['day-name']}>{day.day_of_week}</div>
         <div className={styles['day-opens']}>{day.opens}</div>
+        <div> - </div>
         <div className={styles['day-closes']}>{day.closes}</div>
       </div>
     );
@@ -40,13 +41,17 @@ const PlaceDetail = () => {
       <div className={styles.link}>
         <a href={`mailto:${email}`}>{email}</a>
       </div>
-      <div className={styles.link}>
-        <a href={`tel:+420 ${tel}`}>+420 {tel}</a>
-      </div>
-      <div className={styles['opening-days-hours']}>
-        <h4>{ctx.lang === 'en' ? 'Opening hours' : 'Otevírací doba'}</h4>
-        {schedule}
-      </div>
+      {tel && (
+        <div className={styles.link}>
+          <a href={`tel:+420 ${tel}`}>+420 {tel}</a>
+        </div>
+      )}
+      {schedule.length > 0 && (
+        <div className={styles['opening-days-hours']}>
+          <h4>{ctx.lang === 'en' ? 'Opening hours' : 'Otevírací doba'}</h4>
+          {schedule}
+        </div>
+      )}
     </div>
   );
 };
