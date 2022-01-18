@@ -21,7 +21,13 @@ function App() {
   }
 
   if (!ctx.isLoading && ctx.data.length === 0 && !ctx.error) {
-    content = <span>No data received.</span>;
+    content = (
+      <div className='error'>
+        <span>
+          {ctx.lang === 'en' ? 'No data received.' : 'Data nenalezena.'}
+        </span>
+      </div>
+    );
   }
 
   if (ctx.error) {

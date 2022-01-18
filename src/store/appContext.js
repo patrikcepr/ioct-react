@@ -32,7 +32,7 @@ export const AppContextProvider = (props) => {
     'https://private-anon-510a79a142-golemioapi.apiary-mock.com/v2/medicalinstitutions/?latlng=&range=&districts=&group=&limit=&offset=&updatedSince=';
 
   const productionUrl =
-    'https://api.golemio.cz/v2/medicalinstitutions/?latlng=&range=&districts=&group=&limit=21&offset=&updatedSince=';
+    'https://api.golemio.cz/v2/medicalinstitutions/?latlng=&range=&districts=praha-7&group=&limit=&offset=&updatedSince=';
 
   const publicToken =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhY2thdGhvbkBnb2xlbWlvLmN6IiwiaWQiOjIsIm5hbWUiOiJIYWNrYXRob24iLCJzdXJuYW1lIjoiR29sZW1pbyIsImlhdCI6MTU4NDU0NDYzMSwiZXhwIjoxMTU4NDU0NDYzMSwiaXNzIjoiZ29sZW1pbyIsImp0aSI6IjVlNjU2NDQxLTA4OGUtNDYyYS1iMjUyLTFiNzI1OGU0ZGJkYSJ9.ypDAJirgEs8VBSauraFEoLTTtC6y_F8V1fheAHgzMos';
