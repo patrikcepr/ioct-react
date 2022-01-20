@@ -16,7 +16,7 @@ const Place = (props) => {
         style={styles.button}
         onClick={ctx.showModal.bind(null, props.index)}
       >
-        {ctx.lang === 'en' ? 'more info...' : 'více...'}
+        {ctx.lang === 'en' ? 'more info...' : 'info...'}
       </Button>
     </div>
   );

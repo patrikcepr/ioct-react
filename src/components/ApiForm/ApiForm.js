@@ -24,10 +24,16 @@ const ApiForm = () => {
       <Input
         ref={apiInputRef}
         label={ctx.lang === 'en' ? 'Api Key' : 'Api klíč'}
-        input={{ type: 'text', id: 'apiKey' }}
+        input={{
+          type: 'text',
+          id: 'apiKey',
+          placeholder: `${
+            ctx.lang === 'en' ? 'Insert your key, please' : 'Vložte svůj klíč'
+          }`,
+        }}
       />
       <Button type='submit' style={styles.button}>
-        {ctx.lang === 'en' ? 'Submit' : 'Použít'}
+        {ctx.lang === 'en' ? 'Insert' : 'Vložit'}
       </Button>
     </form>
   );
