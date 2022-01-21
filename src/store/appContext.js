@@ -62,11 +62,11 @@ export const AppContextProvider = (props) => {
           'x-access-token': token,
         },
       });
+      // console.log(response.data);
       const data = response.data.features;
       setData(() => data);
-      // console.log(data);
     } catch (error) {
-      console.log('error', error);
+      console.log(error);
       setError(() => error.message);
     }
     setIsLoading(false);
